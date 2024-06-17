@@ -24,7 +24,7 @@ const [fullName,setFullName]=useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setFullName("Full Name: "+firstname+lastname);
+    setFullName("Full Name: "+firstname+ " " +lastname);
    
     };
   return (
