@@ -40,7 +40,7 @@ const [fullName,setFullName]=useState("");
       <input type="text" name="lastname" value={lastname} onChange={handleLastNameChange} />
     </label>
     <br></br>
-    <input type="submit" value="Submit" />
+    <button type="submit">Submit</button> 
     <p>{fullName}</p>
   </form>
   );
