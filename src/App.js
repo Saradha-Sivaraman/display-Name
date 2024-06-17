@@ -1,49 +1,64 @@
-import React, { useState } from "react";
-import './App.css';
+// Form.js
+import React, { useState } from 'react';
 
-function App() {
- 
-  
-const [lastname,setLastName]=useState("");
-const [firstname,setFirstName]=useState("");
-const [fullName,setFullName]=useState("");
 
-  const handleFirstNameChange = (event) => {
+function Form() {
+	const [formData, setFormData] = useState({
+		firstname: '',
+		lastname: '',
+	});
+    const [fullName,setFullName]=useState("");
+  	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setFormData({
+			...formData,
+			[name]: value,
+		});
+	};
 
-   setFirstName(event.target.value); 
-  
-   
-  };
+	const handleSubmit = (e) => {
+		e.preventDefault();
+  setFullName("Full Name: "+formData.firstname+ " " +formData.lastname);
 
-  const handleLastNameChange = (event) => {
+	};
 
-   
-    setLastName(event.target.value); 
-    
-   };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setFullName("Full Name: "+firstname+ " " +lastname);
-   
-    };
-  return (
-    <form onSubmit={handleSubmit}>
-       <h1> Full Name Display</h1>
-    <label>
-      First Name:
-      <input type="text" name="firstname" value={firstname} onChange={handleFirstNameChange} />
-    </label>
-    <br></br>
-    <label>
-      Last Name:
-      <input type="text" name="lastname" value={lastname} onChange={handleLastNameChange} />
-    </label>
-    <br></br>
-    <button type="submit">Submit</button> 
-    <p>{fullName}</p>
-  </form>
-  );
+	return (
+		<div>
+			<h1>Full Name Display</h1>
+			<form onSubmit={handleSubmit}>
+				<div>
+					<label>
+						First Name:
+						</label>
+					<input
+            type="text"
+						name="firstname"
+						value={formData.firstname}
+						onChange={handleChange}
+            pattern="[A-Za-z]{1,9}"  title="Only alphabets allowed"
+           required
+           	/>
+				</div>
+        <div>
+					<label>
+						Last Name:
+						</label>
+					<input
+         		type="text"
+						name="lastname"
+						value={formData.lastname}
+						onChange={handleChange}
+             pattern="[A-Za-z]{1,9}"  title="Only alphabets allowed"
+             required
+					/>
+				
+				</div>
+		     <button 
+					type="submit">Submit</button>
+           <p>{fullName}</p>
+			</form>
+		</div>
+	);
 }
 
-export default App;
+export default Form;
