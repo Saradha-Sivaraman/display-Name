@@ -35,7 +35,7 @@ function Form() {
 						name="firstname"
 						value={formData.firstname}
 						onChange={handleChange}
-            pattern="[A-Za-z]{1,9}"  title="Only alphabets allowed"
+           // pattern="[A-Za-z]{1,9}"  title="Only alphabets allowed"
            required
            	/>
 				</div>
@@ -48,7 +48,7 @@ function Form() {
 						name="lastname"
 						value={formData.lastname}
 						onChange={handleChange}
-             pattern="[A-Za-z]{1,9}"  title="Only alphabets allowed"
+             //pattern="[A-Za-z]{1,9}"  title="Only alphabets allowed"
              required
 					/>
 				
