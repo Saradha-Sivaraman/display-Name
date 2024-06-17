@@ -3,16 +3,24 @@ import './App.css';
 
 function App() {
  
-  const [lastname,setLastName]=useState("");
-  const [firstname,setFirstName]=useState("");
-  const [fullName,setFullName]=useState("");
+  
+const [lastname,setLastName]=useState("");
+const [firstname,setFirstName]=useState("");
+const [fullName,setFullName]=useState("");
 
-  const handleChange = (event) => {
- 
+  const handleFirstNameChange = (event) => {
+
    setFirstName(event.target.value); 
-   setLastName(event.target.value); 
+  
    
   };
+
+  const handleLastNameChange = (event) => {
+
+   
+    setLastName(event.target.value); 
+    
+   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,12 +32,12 @@ function App() {
        <h1> Full Name Display</h1>
     <label>
       First Name:
-      <input type="text" name="firstname" value={firstname} onChange={handleChange} />
+      <input type="text" name="firstname" value={firstname} onChange={handleFirstNameChange} />
     </label>
     <br></br>
     <label>
       Last Name:
-      <input type="text" name="lastname" value={lastname} onChange={handleChange} />
+      <input type="text" name="lastname" value={lastname} onChange={handleLastNameChange} />
     </label>
     <br></br>
     <input type="submit" value="Submit" />
