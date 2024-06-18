@@ -21,7 +21,8 @@ function Form() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setShow(true);
-  setFullName("Full Name: "+formData.firstname+ " " +formData.lastname);
+  //setFullName("Full Name: "+formData.firstname+ " " +formData.lastname);
+  setFullName(`Full Name: ${formData.firstname} ${formData.lastname}`);
 
 	};
 
