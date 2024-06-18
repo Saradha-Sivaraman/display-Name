@@ -55,8 +55,10 @@ function Form() {
 				</div>
 		     <button 
 					type="submit">Submit</button>
-           <p>{fullName}</p>
 			</form>
+		    <div> 
+			<p>{fullName}</p>
+            </div> 
 		</div>
 	);
 }
