@@ -8,8 +8,10 @@ function Form() {
 		lastname: '',
 	});
     const [fullName,setFullName]=useState("");
+	const [isShow, setShow] = useState(false);
+	
   	const handleChange = (e) => {
-		const { name, value } = e.target;
+	const { name, value } = e.target;
 		setFormData({
 			...formData,
 			[name]: value,
@@ -18,6 +20,7 @@ function Form() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		setShow(true);
   setFullName("Full Name: "+formData.firstname+ " " +formData.lastname);
 
 	};
@@ -55,11 +58,10 @@ function Form() {
 				</div>
 		     <button 
 					type="submit">Submit</button>
+				 {isShow===true && <p>{fullName}</p>}
 			</form>
-		    <div> 
-			<p>{fullName}</p>
-            </div> 
-		</div>
+		  
+           </div>
 	);
 }
 
